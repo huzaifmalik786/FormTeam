@@ -1,0 +1,24 @@
+.togglepage{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.togglepage button{
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 0 10px;
+    background-color: rgb(203, 203, 203);
+    transition: all 0.4s;
+}
+.togglepage button:hover{
+    background-color: rgb(255, 45, 66);
+    color: white;
+    cursor: pointer;
+}

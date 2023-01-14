@@ -1,0 +1,47 @@
+.filters ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    position: relative;
+    margin-right: 1.5rem;;
+}
+.filters ul li{
+    list-style-type: none;
+    background-color: red;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    background-color: rgb(234, 234, 234);
+    cursor: pointer;
+    position: relative;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+.dropdown{
+    display: none;
+    background-color: rgb(232, 232, 232);
+    position: absolute;
+    z-index: 1;
+    width: max-content;
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.2rem;
+    top:2rem;
+}
+.dropdown hr{
+    background-color: black;
+}
+.filter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.domain:hover .domain-dropdown{
+    display: block;
+}
+.gender:hover .gender-dropdown{
+    display: block;
+}
+.available:hover .available-dropdown{
+    display: block;
+}

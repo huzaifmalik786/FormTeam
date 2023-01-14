@@ -1,0 +1,29 @@
+.body{
+    margin-bottom: 4rem;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.menu button{
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(203, 203, 203);
+    transition: all 0.4s;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+.button{
+    text-decoration: none;
+    background-color: rgb(253, 0, 25);
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    padding:10px;
+    transition: all 0.4s;
+    margin-right: 1.5rem;
+}
