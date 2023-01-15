@@ -1,151 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "../styles/Filters.css";
-import Data from "../data/heliverse_mock_data.json";
 
-function Filter({setdata}) {
-  // const [array,setarray]= useState([]);
+function Filter({values,setvalues}) {
   const genders=[{gender:"Male"},{gender:"Female"},{gender:"Agender"},{gender:"Bigender"},{gender:"Polygender"},{gender:"Genderqueer"}]
-  const domains=[{domain:"Sales"},{domain:"Finance"},{domain:"Marketing"},{domain:"IT"},{domain:"UI Designing"},{domain:"Manamegent"},{domain:"Business Development"}]
-  const [values,setvalues]= useState({Male:false,Female:false,Agender:false,Bigender:false,Genderqueer:false,Polygender:false,'Sales':false,'Finance':false,'Marketing':false,'IT':false,'UIDesigning':false,'Management':false,'BusinessDevelopment':false,Available:false,NotAvailable:false})
-  const handleclick=(value, field)=>{
+  const domains=[{domain:"Sales"},{domain:"Finance"},{domain:"Marketing"},{domain:"IT"},{domain:"UI Designing"},{domain:"Management"},{domain:"Business Development"}]
+  const handleclick=(value)=>{
     const item=value.replace(/ +/g,'');
-    values[item]= !values[item];
-    const array=[]
-    // if(values[item]===true){
-    //   if(array.length>0){
-    //     array.map((obj)=>{
-    //       for(const key in obj){
-    //         if(key===field && obj[key]===item){
-    //           temp.push(obj);
-    //         }
-    //       }
-    //     })
-    //   }
-    //   else{
-    //     Data.map((obj)=>{
-    //       for(const key in obj){
-    //         if(key==field && obj[key]==item){
-    //           temp.push(obj);
-    //         }
-    //       }
-    //     })
-    //   }
-    //   setarray(temp);
-    //   setdata(temp);
-    // }
-    for(const key in values){
-      if(key==="Male" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender==='Male'){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Female" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender==='Female'){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Agender" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender==='Agender'){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Bigender" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Polygender" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Genderqueer" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.gender===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Sales" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Finance" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="IT" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Marketing" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Management" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="UIDesigning" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain.replace(/ +/g,'')===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="BusinessDevelopment" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.domain.replace(/ +/g,'')===key){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="Available" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.available===true){
-            array.push(obj);
-          }
-        })
-      }
-      if(key==="NotAvailable" && values[key]===true){
-        Data.map((obj)=>{
-          if(obj.available===false){
-            array.push(obj);
-          }
-        })
-      }
-    }
-    if(array.length>0){
-      setdata(array);
-    }
-    else{
-      setdata(Data);
-    }
+    const index= values.findIndex((obj=>obj.name===item));
+    let temp= values.slice();
+    temp[index].value= !temp[index].value;
+    setvalues(temp);
 }
   
   return (

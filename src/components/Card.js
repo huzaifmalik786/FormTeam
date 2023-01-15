@@ -31,7 +31,8 @@ function Card({cards,teamdata,setdata}) {
 
   return (
     <div className="cards">
-      <div className='wrapper'>
+      {cards.length>0?(
+        <div className='wrapper'>
         {cards.map(item=>(
           <div className='card'>
             <div className='image'>
@@ -46,8 +47,13 @@ function Card({cards,teamdata,setdata}) {
               <button style={teamdata.indexOf(item)!==-1?{backgroundColor:"green"}:{}} onClick={()=>toggleteam(item)}>{teamdata.indexOf(item)!==-1?"Added":"Add to Team +"}</button>
             </div>
           </div>
-        ))}
+        ))} 
       </div>
+      ):(
+        <div className='wrapper'>
+          <p>No data Found!!</p>
+        </div>
+      )}
     </div>
   )
 }
